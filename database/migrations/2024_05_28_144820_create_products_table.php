@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('fee');
             $table->string('image');
             $table->text('description');
-            $table->string('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

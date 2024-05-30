@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class Product extends Model
 {
     use HasFactory;
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
     /**
      * fillable
      *
